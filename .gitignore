@@ -1,0 +1,20 @@
+# Dossiers générés par Unreal
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+Build/
+
+# Plugins : mêmes dossiers générés
+Plugins/**/Binaries/
+Plugins/**/Intermediate/
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.sln
+*.suo
+*.VC.db
+*.opensdf
+*.sdf
