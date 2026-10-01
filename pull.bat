@@ -9,4 +9,5 @@ if %errorlevel%==0 (
 )
 git pull
 git status
+RIPPER.uproject
 pause
