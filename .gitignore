@@ -13,8 +13,33 @@ Plugins/**/Intermediate/
 .vs/
 .vscode/
 .idea/
+.vsconfig
 *.sln
 *.suo
 *.VC.db
 *.opensdf
 *.sdf
+*.code-workspace
+
+# IDE macOS / Xcode
+*.xcodeproj/
+*.xcworkspace/
+*.xcscmblueprint
+
+# Divers Unreal
+*.udb
+*.VC.opendb
+
+# Espace de travail personnel genere par l'editeur
+# (Content/Collections n'est PAS ignore : les collections partagees
+#  se commitent volontairement)
+Content/Developers/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
