@@ -3,7 +3,8 @@ REM =============================================================
 REM   RIPPER - configuration d'un poste Windows (a lancer UNE
 REM   fois apres le clone). Double-cliquable depuis l'explorateur.
 REM =============================================================
-cd /d "%~dp0"
+REM Le script vit dans Scripts\, on remonte a la racine du projet.
+cd /d "%~dp0.."
 setlocal enabledelayedexpansion
 
 echo.
