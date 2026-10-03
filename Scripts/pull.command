@@ -1,6 +1,7 @@
 #!/bin/bash
 # Équivalent macOS de pull.bat — double-cliquable depuis le Finder.
-cd "$(dirname "$0")" || exit 1
+# Le script vit dans Scripts/, on remonte a la racine du projet.
+cd "$(dirname "$0")/.." || exit 1
 
 if pgrep -x "UnrealEditor" > /dev/null; then
     echo

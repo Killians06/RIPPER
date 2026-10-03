@@ -3,7 +3,8 @@
 #  RIPPER — configuration d'un poste macOS (a lancer UNE fois
 #  apres le clone). Double-cliquable depuis le Finder.
 # =============================================================
-cd "$(dirname "$0")" || exit 1
+# Le script vit dans Scripts/, on remonte a la racine du projet.
+cd "$(dirname "$0")/.." || exit 1
 
 ok()   { printf '  \033[32mOK\033[0m   %s\n' "$1"; }
 warn() { printf '  \033[33m!\033[0m    %s\n' "$1"; }

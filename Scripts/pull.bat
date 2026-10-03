@@ -1,4 +1,6 @@
 @echo off
+REM Le script vit dans Scripts\, on remonte a la racine du projet.
+cd /d "%~dp0.."
 tasklist /FI "IMAGENAME eq UnrealEditor.exe" | find /I "UnrealEditor.exe" >nul
 if %errorlevel%==0 (
     echo.
