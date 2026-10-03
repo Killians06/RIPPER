@@ -89,29 +89,3 @@ Le verrou n'est **pas automatique** : rien ne te le rappellera. À deux ou trois
 | `Params/Keyboard_Shortcuts.ini` | raccourcis viewport ZQSD, installés par le script de setup |
 
 Non versionnés (générés par Unreal) : `Binaries/`, `Intermediate/`, `Saved/`, `DerivedDataCache/`, `Content/Developers/`.
-
-### Entrées clavier : deux choses distinctes
-
-- `Config/DefaultInput.ini` → les entrées **du jeu** (ZQSD pour le personnage). Versionné, à ne pas supprimer.
-- `Params/Keyboard_Shortcuts.ini` → les raccourcis **de l'éditeur**, pour se déplacer dans le viewport en ZQSD. Installé par le script de setup dans la config utilisateur d'Unreal, hors du projet.
-
----
-
-## ⚠️ Deux avertissements
-
-**Ne renomme jamais `.gitattributes`.** Le fichier s'était appelé `.gittattributes` (deux `t`) pendant un temps : Git l'ignorait en silence, donc LFS et les verrous étaient inactifs sans que personne le voie, et les assets partaient en binaires bruts dans l'historique.
-
-**L'historique a été réécrit le 3 octobre 2026** pour basculer les assets vers LFS et purger 166 Mo de contenu de template mort (le dépôt est passé de 112 Mo à 31 Mo au clone). Si tu possèdes un clone antérieur à cette date, **re-clone-le** : un `git pull` échouera sur des historiques sans ancêtre commun.
-
----
-
-## Dépannage
-
-| Symptôme | Cause | Remède |
-|---|---|---|
-| Les assets sont des fichiers texte de ~130 octets | git-lfs absent au moment du clone | installer git-lfs, puis `git lfs pull` |
-| Unreal refuse de sauvegarder, assets en lecture seule | script de setup non lancé | relancer `setup.command` / `setup.bat` |
-| `git pull` : « refusing to merge unrelated histories » | clone antérieur au 3 octobre 2026 | re-cloner le dépôt |
-| Push refusé sur un asset précis | quelqu'un détient le verrou | `git lfs locks` pour voir qui |
-| Des fichiers `… 2.uasset` apparaissent | doublons créés par macOS lors d'une copie | les supprimer, **ne jamais les committer** (ce sont des acteurs fantômes pour World Partition) |
-| Le projet s'ouvre sur une map vide | — | vérifier que `Base_Map` est bien la map par défaut dans `Config/DefaultEngine.ini` |
